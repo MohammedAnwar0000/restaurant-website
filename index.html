@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="استمتع بأشهى أنواع البيتزا في مطعم بيتزا هاوس. مكونات طازجة، توصيل سريع، وأسعار مناسبة. اطلب الآن!">
+    <title>بيتزا هاوس | أفضل بيتزا في المدينة</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #E63946;
+            --secondary: #F4A261;
+            --dark: #1D3557;
+            --light: #F1FAEE;
+            --accent: #2A9D8F;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #fff;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .menu-item {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .menu-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center bg-white backdrop-blur-md rounded-full px-6 py-3 shadow-lg">
+                <a href="#" class="text-2xl font-bold text-red-600 flex items-center">
+                    <i class="fas fa-pizza-slice ml-2"></i>
+                    <span>بيتزا هاوس</span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8 space-x-reverse">
+                    <a href="#home" class="text-gray-700 hover:text-red-600 font-medium transition-colors">الرئيسية</a>
+                    <a href="#menu" class="text-gray-700 hover:text-red-600 font-medium transition-colors">قائمة الطعام</a>
+                    <a href="#about" class="text-gray-700 hover:text-red-600 font-medium transition-colors">من نحن</a>
+                    <a href="#contact" class="text-gray-700 hover:text-red-600 font-medium transition-colors">اتصل بنا</a>
+                    <a href="#order" class="bg-red-600 text-white px-6 py-2 rounded-full font-medium hover:bg-red-700 transition-colors transform hover:scale-105">
+                        <i class="fas fa-shopping-cart ml-2"></i> اطلب الآن
+                    </a>
+                </div>
+                
+                <button class="md:hidden text-gray-700 focus:outline-none" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-white shadow-lg rounded-lg mt-2 mx-4 p-4" id="mobile-menu">
+            <a href="#home" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-md">الرئيسية</a>
+            <a href="#menu" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-md">قائمة الطعام</a>
+            <a href="#about" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-md">من نحن</a>
+            <a href="#contact" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-md">اتصل بنا</a>
+            <a href="#order" class="block bg-red-600 text-white text-center py-2 px-4 rounded-md mt-2 hover:bg-red-700 transition-colors">
+                <i class="fas fa-shopping-cart ml-2"></i> اطلب الآن
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Image Background -->
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="https://images.pexels.com/photos/905847/pexels-photo-905847.jpeg?auto=compress&cs=tinysrgb&w=1920" 
+                alt="Delicious Pizza" 
+                class="w-full h-full object-cover"
+                loading="eager"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/70"></div>
+            
+            <!-- Floating pizza elements -->
+            <div class="absolute top-1/4 left-1/4 w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
+                <i class="fas fa-pizza-slice text-2xl text-white"></i>
+            </div>
+            <div class="absolute top-1/3 right-1/3 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
+                <i class="fas fa-cheese text-xl text-yellow-300"></i>
+            </div>
+            <div class="absolute bottom-1/4 right-1/4 w-14 h-14 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
+                <i class="fas fa-pepper-hot text-2xl text-red-500"></i>
+            </div>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="container mx-auto px-4 z-10 text-center text-white" data-aos="fade-up">
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-6 inline-block px-6 py-2 bg-gradient-to-r from-yellow-500 to-yellow-300 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
+                    <span class="text-white font-bold text-lg">⭐ الأكثر مبيعاً في مصر</span>
+                </div>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-yellow-200">بيتزا</span>
+                    <span class="block text-white mt-3">بمذاق إيطالي أصيل</span>
+                </h1>
+                <p class="text-xl md:text-2xl font-medium mb-8 text-gray-100 max-w-2xl mx-auto leading-relaxed">
+                    أطباقنا تُحضر يومياً بأيدٍ خبيرة ومكونات طازجة
+                    <span class="block mt-3">
+                        <span class="inline-flex items-center mx-2"><i class="fas fa-bolt text-yellow-300 ml-1"></i> توصيل سريع</span>
+                        <span class="inline-flex items-center mx-2"><i class="fas fa-leaf text-green-300 ml-1"></i> مكونات طازجة</span>
+                        <span class="inline-flex items-center mx-2"><i class="fas fa-gift text-red-300 ml-1"></i> عروض حصرية</span>
+                    </span>
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#menu" class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-utensils ml-2"></i> تصفح القائمة
+                    </a>
+                    <a href="#order" class="bg-white hover:bg-gray-100 text-red-600 font-bold py-4 px-8 rounded-full text-lg transition-all transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-shopping-cart ml-2"></i> اطلب الآن
+                    </a>
+                </div>
+            </div>
+            
+         
+        </div>
+        
+        <!-- Floating Pizza Elements -->
+        <div class="absolute top-1/4 left-10 w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-yellow-400 text-2xl floating" style="animation-delay: 0.2s;">
+            <i class="fas fa-pepper-hot"></i>
+        </div>
+        <div class="absolute bottom-1/4 right-10 w-20 h-20 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-red-400 text-3xl floating" style="animation-delay: 0.4s;">
+            <i class="fas fa-pizza-slice"></i>
+        </div>
+        <div class="absolute top-1/3 right-1/4 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-green-400 text-xl floating" style="animation-delay: 0.6s;">
+            <i class="fas fa-leaf"></i>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-gray-50 relative overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="absolute inset-0 bg-gradient-to-br from-red-50 to-yellow-50 -z-10"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-red-600 font-bold text-lg mb-2 block">تعرف علينا</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">قصة نجاحنا</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-red-500 to-yellow-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                <div class="p-8 md:p-12">
+                    <div class="text-center mb-10">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">من نحن</h2>
+                        <p class="text-lg text-gray-600 leading-relaxed mb-8 max-w-3xl mx-auto">
+                            نرحب بكم في عالم نكهات بيتزا هاوس، حيث تلتقي الأصالة بالحداثة في كل لقمة. منذ تأسيسنا في عام 2010، ونحن نعمل بشغف لتقديم تجربة فريدة لعشاق البيتزا الأصيلة.
+                        </p>
+                        <div class="w-20 h-1 bg-gradient-to-r from-red-500 to-yellow-500 mx-auto rounded-full"></div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-8 mb-10">
+                        <div class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-award text-2xl text-red-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">جودة لا مثيل لها</h3>
+                            <p class="text-gray-600">نختار أفضل المكونات الطازجة والمستوردة بعناية فائقة لنضمن لكم ألذ النكهات</p>
+                        </div>
+                        
+                        <div class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-utensils text-2xl text-yellow-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">وصفات سرية</h3>
+                            <p class="text-gray-600">وصفات إيطالية أصلية توارثناها على مدى عقود مع إضفاء لمساتنا الخاصة</p>
+                        </div>
+                        
+                        <div class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-truck text-2xl text-green-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">توصيل سريع</h3>
+                            <p class="text-gray-600">خدمة توصيل سريعة تضمن وصول طلبك ساخنًا وطازجًا كما لو كان طُبخ للتو</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-red-50 to-yellow-50 p-8 rounded-xl border-r-4 border-red-500">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">رؤيتنا</h3>
+                        <p class="text-gray-700 text-center mb-6 leading-relaxed">
+                            أن نكون الخيار الأول لعشاق البيتزا في مصر من خلال تقديم تجربة طعام استثنائية تجمع بين الأصالة والجودة والابتكار.
+                        </p>
+                        <div class="flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <i class="fas fa-user-tie text-2xl text-red-600"></i>
+                                </div>
+                                <h4 class="font-bold text-gray-800">أحمد العلي</h4>
+                                <p class="text-sm text-gray-500">الرئيس التنفيذي والمؤسس</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-red-600 font-bold mb-2 block">لماذا نحن الأفضل</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">لماذا تختار بيتزا هاوس؟</h2>
+                <div class="w-20 h-1 bg-red-600 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="group bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 text-2xl">
+                        <i class="fas fa-leaf text-red-600 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">مكونات طازجة</h3>
+                    <p class="text-gray-600 leading-relaxed">نختار أفضل المكونات الطازجة يوميًا لنضمن لكم ألذ النكهات وأعلى جودة</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="group bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:bg-yellow-500 group-hover:text-white transition-colors duration-300 text-2xl">
+                        <i class="fas fa-bolt text-yellow-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">توصيل سريع</h3>
+                    <p class="text-gray-600 leading-relaxed">خدمة توصيل سريعة تضمن وصول طلبك ساخنًا وطازجًا في أسرع وقت</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="group bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:bg-green-500 group-hover:text-white transition-colors duration-300 text-2xl">
+                        <i class="fas fa-tag text-green-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">عروض مميزة</h3>
+                    <p class="text-gray-600 leading-relaxed">خصومات وعروض حصرية لعملائنا الكرام طوال أيام الأسبوع</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">قائمتنا المميزة</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Pizza 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="بيتزا مارجريتا" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">مارجريتا</h3>
+                        <p class="text-gray-600 mb-4">صوص طماطم، جبنة موزاريلا، وريحان طازج</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-red-600">$9.99</span>
+                            <button onclick="placeOrder('مارجريتا', 9.99)" class="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700 transition">
+                                اطلب الآن
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pizza 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80" 
+                         alt="بيتزا ببروني" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">ببروني</h3>
+                        <p class="text-gray-600 mb-4">صوص طماطم، جبنة موزاريلا، ببروني</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-red-600">$11.99</span>
+                            <button onclick="placeOrder('ببروني', 11.99)" class="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700 transition">
+                                اطلب الآن
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pizza 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <img src="data:image/jpeg;base64,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" 
+                         alt="بيتزا خضار" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">خضار</h3>
+                        <p class="text-gray-600 mb-4">صوص طماطم، جبنة موزاريلا، فلفل، بصل، مشروم، زيتون</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-red-600">$10.99</span>
+                            <button onclick="placeOrder('خضار', 10.99)" class="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700 transition">
+                                اطلب الآن
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offer Section -->
+    <section class="py-20 bg-red-600 text-white">
+        <div class="container mx-auto px-4 text-center" data-aos="zoom-in">
+            <h2 class="text-4xl font-bold mb-6">عرض خاص!</h2>
+            <p class="text-2xl mb-8">اطلب بيتزا كبيرة واحصل على مشروب غازي مجاني!</p>
+            <p class="text-xl mb-8">العرض ساري حتى نهاية الشهر</p>
+            <button class="bg-yellow-400 text-red-800 text-xl px-8 py-3 rounded-full font-bold hover:bg-yellow-300 transition transform hover:scale-105">
+                اطلب الآن
+            </button>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section id="order" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">اطلب بيتزاتك المفضلة</h2>
+            <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg" data-aos="fade-up">
+                <form id="orderForm" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-gray-700 mb-2">الاسم الكامل</label>
+                        <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500" required>
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-gray-700 mb-2">رقم الجوال</label>
+                        <input type="tel" id="phone" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500" required>
+                    </div>
+                    <div>
+                        <label for="pizza-type" class="block text-gray-700 mb-2">نوع البيتزا</label>
+                        <select id="pizza-type" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500" required>
+                            <option value="">اختر نوع البيتزا</option>
+                            <option value="margherita">مارجريتا - $9.99</option>
+                            <option value="pepperoni">ببروني - $11.99</option>
+                            <option value="vegetable">خضار - $10.99</option>
+                        </select>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 mb-3 text-lg font-medium">اختر الحجم</label>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4" x-data="{ selectedSize: 'medium' }">
+                            <label class="size-option">
+                                <input type="radio" name="size" value="small" class="hidden" x-model="selectedSize">
+                                <div class="p-4 border-2 rounded-xl cursor-pointer text-center transition-all duration-200" 
+                                     :class="{ 'border-red-500 bg-red-50': selectedSize === 'small', 'border-gray-200 hover:border-red-300': selectedSize !== 'small' }">
+                                    <div class="text-2xl font-bold text-gray-800">صغير</div>
+                                    <div class="text-sm text-gray-500 mt-1">25 سم</div>
+                                    <div class="text-red-600 font-medium mt-2">+$0.00</div>
+                                </div>
+                            </label>
+                            <label class="size-option">
+                                <input type="radio" name="size" value="medium" class="hidden" x-model="selectedSize" checked>
+                                <div class="p-4 border-2 rounded-xl cursor-pointer text-center transition-all duration-200"
+                                     :class="{ 'border-red-500 bg-red-50': selectedSize === 'medium', 'border-gray-200 hover:border-red-300': selectedSize !== 'medium' }">
+                                    <div class="text-2xl font-bold text-gray-800">وسط</div>
+                                    <div class="text-sm text-gray-500 mt-1">30 سم</div>
+                                    <div class="text-red-600 font-medium mt-2">+$2.00</div>
+                                </div>
+                            </label>
+                            <label class="size-option">
+                                <input type="radio" name="size" value="large" class="hidden" x-model="selectedSize">
+                                <div class="p-4 border-2 rounded-xl cursor-pointer text-center transition-all duration-200"
+                                     :class="{ 'border-red-500 bg-red-50': selectedSize === 'large', 'border-gray-200 hover:border-red-300': selectedSize !== 'large' }">
+                                    <div class="text-2xl font-bold text-gray-800">كبير</div>
+                                    <div class="text-sm text-gray-500 mt-1">35 سم</div>
+                                    <div class="text-red-600 font-medium mt-2">+$4.00</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="notes" class="block text-gray-700 mb-2">ملاحظات إضافية (اختياري)</label>
+                        <textarea id="notes" rows="3" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-red-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-red-700 transition">
+                        تأكيد الطلب
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">آراء عملائنا</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-2xl">★★★★★</div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"أفضل بيتزا جربتها في حياتي! النكهة رائعة والتوصيل كان سريعًا جدًا."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
+                        <div>
+                            <h4 class="font-bold">أحمد محمد</h4>
+                            <p class="text-gray-500 text-sm">عميل دائم</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-2xl">★★★★★</div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"المكونات طازجة جدًا والبيتزا تصل ساخنة دائمًا. أنصح الجميع بتجربتها!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
+                        <div>
+                            <h4 class="font-bold">سارة خالد</h4>
+                            <p class="text-gray-500 text-sm">عميلة جديدة</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-2xl">★★★★★</div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"الأسعار مناسبة جدًا للجودة المقدمة. أصبحت بيتزا بيتزا هاوس هي المفضلة لدي!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
+                        <div>
+                            <h4 class="font-bold">عمر عبدالله</h4>
+                            <p class="text-gray-500 text-sm">عميل منذ 2022</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">تواصل معنا</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800">معلومات التواصل</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-red-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-red-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">العنوان</h4>
+                                <p class="text-gray-600">مدينة نصر، القاهرة، مصر</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-red-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-red-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">الهاتف</h4>
+                                <p class="text-gray-600">+966 11 234 5678</p>
+                                <p class="text-gray-600">+966 50 123 4567</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-red-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-red-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">البريد الإلكتروني</h4>
+                                <p class="text-gray-600">info@pizzahouse.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-red-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-clock text-red-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">ساعات العمل</h4>
+                                <p class="text-gray-600">الأحد - الخميس: 11 صباحًا - 12 منتصف الليل</p>
+                                <p class="text-gray-600">الجمعة - السبت: 1 ظهرًا - 1 صباحًا</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-bold text-xl mb-4 text-gray-800">تابعنا على وسائل التواصل</h4>
+                        <div class="flex space-x-4 space-x-reverse">
+                            <a href="#" class="bg-gray-200 hover:bg-red-600 text-gray-800 hover:text-white p-3 rounded-full transition-colors">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-gray-200 hover:bg-blue-400 text-gray-800 hover:text-white p-3 rounded-full transition-colors">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="bg-gray-200 hover:bg-pink-600 text-gray-800 hover:text-white p-3 rounded-full transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-gray-200 hover:bg-red-500 text-gray-800 hover:text-white p-3 rounded-full transition-colors">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-800">أرسل لنا رسالة</h3>
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="contact-name" class="block text-gray-700 font-medium mb-2">الاسم الكامل</label>
+                                    <input type="text" id="contact-name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="أدخل اسمك">
+                                </div>
+                                <div>
+                                    <label for="contact-email" class="block text-gray-700 font-medium mb-2">البريد الإلكتروني</label>
+                                    <input type="email" id="contact-email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="أدخل بريدك الإلكتروني">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="contact-subject" class="block text-gray-700 font-medium mb-2">الموضوع</label>
+                                <input type="text" id="contact-subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="موضوع الرسالة">
+                            </div>
+                            <div>
+                                <label for="contact-message" class="block text-gray-700 font-medium mb-2">الرسالة</label>
+                                <textarea id="contact-message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="اكتب رسالتك هنا..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-colors transform hover:scale-105">
+                                إرسال الرسالة
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Pizza House</h3>
+                    <p class="text-gray-400">نقدم أشهى أنواع البيتزا الإيطالية بمذاق لا يقاوم ومكونات طازجة.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">روابط سريعة</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">الرئيسية</a></li>
+                        <li><a href="#menu" class="text-gray-400 hover:text-white transition">القائمة</a></li>
+                        <li><a href="#order" class="text-gray-400 hover:text-white transition">اطلب الآن</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">تواصل معنا</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt ml-2"></i>
+                            <span>مدينة نصر، القاهرة، مصر</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone ml-2"></i>
+                            <span>+966 12 345 6789</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope ml-2"></i>
+                            <span>info@pizzahouse.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Pizza House. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-red-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-red-700 transition opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- AOS and Custom JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Form Submission
+        const orderForm = document.getElementById('orderForm');
+        orderForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('تم استلام طلبك بنجاح! سنتواصل معك قريبًا لتأكيد التفاصيل.');
+            orderForm.reset();
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            
+            // تغيير الأيقونة بين القائمة والإغلاق
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+        
+        // إغلاق القائمة عند النقر على رابط
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+    <script>
+        // دالة التعامل مع الطلبات
+        function placeOrder(itemName, price) {
+            // يمكنك تغيير رابط الواتساب برقم الهاتف الخاص بك
+            const phoneNumber = '1234567890'; // استبدل برقم الهاتف الخاص بك
+            const message = `مرحباً، أود طلب ${itemName} بسعر ${price}$`;
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            
+            // فتح رابط الواتساب في نافذة جديدة
+            window.open(whatsappUrl, '_blank');
+            
+            // إشعار للمستخدم
+            alert(`شكراً لطلبك! سيتم تحويلك إلى واتساب لإكمال الطلب`);
+        }
+    </script>
+    
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+</html>
